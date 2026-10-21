@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  [data-theme="light"] {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Core Canvas & Surface Tokens (Light Default) */
+    --bg-app: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-subtle: #F8FAFC;
+    --bg-surface-muted: #F1F5F9;
+    --bg-surface-hover: #F8FAFC;
+    --bg-selected-row: rgba(238, 242, 255, 0.75);
+    --bg-input: #F8FAFC;
+    --bg-input-elevated: #FFFFFF;
+    --bg-dropzone: linear-gradient(to bottom, rgba(238, 242, 255, 0.35), #FFFFFF, rgba(240, 249, 255, 0.35));
+    --bg-dropzone-active: rgba(238, 242, 255, 0.8);
+    --bg-toolbar: linear-gradient(to right, rgba(238, 242, 255, 0.7), #FFFFFF, rgba(240, 249, 255, 0.7));
+    --bg-progress-bar: linear-gradient(to right, #F8FAFC, rgba(238, 242, 255, 0.35), rgba(240, 249, 255, 0.35));
+
+    /* Text Hierarchy Tokens */
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --text-faint: #94A3B8;
+
+    /* Border & Divider Tokens */
+    --border-subtle: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --border-dropzone: #C7D2FE;
+
+    /* Semantic Accent Soft Surfaces (Light) */
+    --indigo-soft-bg: rgba(238, 242, 255, 0.85);
+    --indigo-soft-border: #C7D2FE;
+    --indigo-soft-text: #3730A3;
+
+    --emerald-soft-bg: rgba(236, 253, 245, 0.85);
+    --emerald-soft-border: #A7F3D0;
+    --emerald-soft-text: #065F46;
+
+    --sky-soft-bg: rgba(240, 249, 255, 0.85);
+    --sky-soft-border: #BAE6FD;
+    --sky-soft-text: #075985;
+
+    --amber-soft-bg: rgba(255, 251, 235, 0.85);
+    --amber-soft-border: #FDE68A;
+    --amber-soft-text: #92400E;
+
+    --rose-soft-bg: rgba(255, 241, 242, 0.85);
+    --rose-soft-border: #FECDD3;
+    --rose-soft-text: #9F1239;
+
+    --violet-soft-bg: rgba(245, 243, 255, 0.85);
+    --violet-soft-border: #DDD6FE;
+    --violet-soft-text: #5B21B6;
+
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    /* Core Canvas & Surface Tokens (Dark Mode) */
+    --bg-app: #0B0F19;
+    --bg-surface: #111827;
+    --bg-surface-subtle: #1E293B;
+    --bg-surface-muted: #0F172A;
+    --bg-surface-hover: rgba(30, 41, 59, 0.7);
+    --bg-selected-row: rgba(79, 70, 229, 0.18);
+    --bg-input: #0F172A;
+    --bg-input-elevated: #1E293B;
+    --bg-dropzone: linear-gradient(to bottom, rgba(49, 46, 129, 0.2), #111827, rgba(12, 74, 110, 0.2));
+    --bg-dropzone-active: rgba(79, 70, 229, 0.28);
+    --bg-toolbar: linear-gradient(to right, rgba(30, 27, 75, 0.65), #111827, rgba(12, 74, 110, 0.45));
+    --bg-progress-bar: linear-gradient(to right, #0F172A, rgba(49, 46, 129, 0.25), rgba(12, 74, 110, 0.25));
+
+    /* Text Hierarchy Tokens */
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-faint: #64748B;
+
+    /* Border & Divider Tokens */
+    --border-subtle: #1E293B;
+    --border-strong: #334155;
+    --border-dropzone: #4338CA;
+
+    /* Semantic Accent Soft Surfaces (Dark) */
+    --indigo-soft-bg: rgba(79, 70, 229, 0.16);
+    --indigo-soft-border: rgba(99, 102, 241, 0.4);
+    --indigo-soft-text: #A5B4FC;
+
+    --emerald-soft-bg: rgba(16, 185, 129, 0.15);
+    --emerald-soft-border: rgba(52, 211, 153, 0.35);
+    --emerald-soft-text: #6EE7B7;
+
+    --sky-soft-bg: rgba(14, 165, 233, 0.15);
+    --sky-soft-border: rgba(56, 189, 248, 0.35);
+    --sky-soft-text: #7DD3FC;
+
+    --amber-soft-bg: rgba(245, 158, 11, 0.15);
+    --amber-soft-border: rgba(251, 191, 36, 0.35);
+    --amber-soft-text: #FCD34D;
+
+    --rose-soft-bg: rgba(244, 63, 94, 0.15);
+    --rose-soft-border: rgba(251, 113, 133, 0.4);
+    --rose-soft-text: #FDA4AF;
+
+    --violet-soft-bg: rgba(139, 92, 246, 0.16);
+    --violet-soft-border: rgba(167, 139, 250, 0.4);
+    --violet-soft-text: #C4B5FD;
+
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Reusable CSS-Variable Driven Component Primitives */
+.theme-app-shell {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+}
+
+.theme-card {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.theme-subsurface {
+  background-color: var(--bg-surface-subtle);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.theme-muted-well {
+  background-color: var(--bg-surface-muted);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.theme-toolbar {
+  background: var(--bg-toolbar);
+  border-color: var(--border-subtle);
+}
+
+.theme-progress-footer {
+  background: var(--bg-progress-bar);
+  border-color: var(--border-subtle);
+}
+
+.theme-dropzone {
+  background: var(--bg-dropzone);
+  border-color: var(--border-dropzone);
+}
+
+.theme-dropzone-active {
+  background: var(--bg-dropzone-active);
+}
+
+.theme-input {
+  background-color: var(--bg-input);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.theme-input::placeholder {
+  color: var(--text-muted);
+}
+
+.theme-input-elevated {
+  background-color: var(--bg-input-elevated);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.theme-input-elevated::placeholder {
+  color: var(--text-muted);
+}
+
+.theme-table-head {
+  background-color: var(--bg-surface-subtle);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.theme-table-row {
+  border-color: var(--border-subtle);
+}
+
+.theme-table-row:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.theme-table-row-selected {
+  background-color: var(--bg-selected-row);
+}

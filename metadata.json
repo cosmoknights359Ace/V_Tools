@@ -1,0 +1,6 @@
+{
+  "name": "DocForge Local PDF Studio",
+  "description": "100% offline-first document-to-PDF conversion studio with batch processing, page layout controls, PDF merging, watermarking, and direct local file system export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
